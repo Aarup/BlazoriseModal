@@ -1,7 +1,202 @@
 ﻿@page "/"
 
+<Button Class="btn btn-primary" Style="margin-bottom: 10px;" Clicked="@ShowModal">Show Modal (Blazorise)</Button>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-bottom: 10px;">
+    Show modal (Bootstrap)
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<Modal @ref="modalRef">
+    <ModalContent Centered="true">
+        <ModalHeader>
+            <ModalTitle>Employee edit</ModalTitle>
+            <CloseButton />
+        </ModalHeader>
+        <ModalBody>
+            <Field>
+                <FieldLabel>Name</FieldLabel>
+                <TextEdit Placeholder="Enter name..." />
+            </Field>
+            <Field>
+                <FieldLabel>Surname</FieldLabel>
+                <TextEdit Placeholder="Enter surname..." />
+            </Field>
+        </ModalBody>
+        <ModalFooter>
+            <Button Color="Color.Secondary" Clicked="@HideModal">Close</Button>
+            <Button Color="Color.Primary" Clicked="@HideModal">Save Changes</Button>
+        </ModalFooter>
+    </ModalContent>
+</Modal>
+
+<Row>
+    <Blazorise.Column ColumnSize="ColumnSize.Is4" Style="margin-bottom: 10px;">
+        <Blazorise.Card>
+            <Blazorise.CardHeader>
+                Stuff
+            </Blazorise.CardHeader>
+            <Blazorise.CardBody>
+                <div id="search-inputs">
+                    <Blazorise.Label>Item 1</Blazorise.Label>
+                    <input class="form-control" />
+                    <Blazorise.Label>Item 2:</Blazorise.Label>
+                    <input class="form-control" />
+                </div>
+                <br />
+                <Blazorise.Container>
+                    <Blazorise.Row>
+                        <Blazorise.Column ColumnSize="ColumnSize.Is6">
+                            <Blazorise.Button Class="btn btn-danger">
+                                <Blazorise.Icon Name="Blazorise.Icons.FontAwesome.FontAwesomeIcons.Trash" />
+                                Reset
+                            </Blazorise.Button>
+                        </Blazorise.Column>
+                        <Blazorise.Column ColumnSize="ColumnSize.Is6">
+                            <Blazorise.Button Class="btn btn-primary">
+                                <Blazorise.Icon Name="Blazorise.Icons.FontAwesome.FontAwesomeIcons.Search" />
+                                Search
+                            </Blazorise.Button>
+                        </Blazorise.Column>
+                    </Blazorise.Row>
+                </Blazorise.Container>
+            </Blazorise.CardBody>
+        </Blazorise.Card>
+    </Blazorise.Column>
+
+    <Blazorise.Column ColumnSize="ColumnSize.Is4" Style="margin-bottom: 10px;">
+        <Blazorise.Card>
+            <Blazorise.CardHeader>
+                Stuff
+            </Blazorise.CardHeader>
+            <Blazorise.CardBody>
+                <div id="search-inputs">
+                    <Blazorise.Label>Item 1</Blazorise.Label>
+                    <input class="form-control" />
+                    <Blazorise.Label>Item 2:</Blazorise.Label>
+                    <input class="form-control" />
+                </div>
+                <br />
+                <Blazorise.Container>
+                    <Blazorise.Row>
+                        <Blazorise.Column ColumnSize="ColumnSize.Is6">
+                            <Blazorise.Button Class="btn btn-danger">
+                                <Blazorise.Icon Name="Blazorise.Icons.FontAwesome.FontAwesomeIcons.Trash" />
+                                Reset
+                            </Blazorise.Button>
+                        </Blazorise.Column>
+                        <Blazorise.Column ColumnSize="ColumnSize.Is6">
+                            <Blazorise.Button Class="btn btn-primary">
+                                <Blazorise.Icon Name="Blazorise.Icons.FontAwesome.FontAwesomeIcons.Search" />
+                                Search
+                            </Blazorise.Button>
+                        </Blazorise.Column>
+                    </Blazorise.Row>
+                </Blazorise.Container>
+            </Blazorise.CardBody>
+        </Blazorise.Card>
+    </Blazorise.Column>
+
+    <Blazorise.Column ColumnSize="ColumnSize.Is4" Style="margin-bottom: 10px;">
+        <Blazorise.Card>
+            <Blazorise.CardHeader>
+                Stuff
+            </Blazorise.CardHeader>
+            <Blazorise.CardBody>
+                <div id="search-inputs">
+                    <Blazorise.Label>Item 1</Blazorise.Label>
+                    <input class="form-control" />
+                    <Blazorise.Label>Item 2:</Blazorise.Label>
+                    <input class="form-control" />
+                </div>
+                <br />
+                <Blazorise.Container>
+                    <Blazorise.Row>
+                        <Blazorise.Column ColumnSize="ColumnSize.Is6">
+                            <Blazorise.Button Class="btn btn-danger">
+                                <Blazorise.Icon Name="Blazorise.Icons.FontAwesome.FontAwesomeIcons.Trash" />
+                                Reset
+                            </Blazorise.Button>
+                        </Blazorise.Column>
+                        <Blazorise.Column ColumnSize="ColumnSize.Is6">
+                            <Blazorise.Button Class="btn btn-primary">
+                                <Blazorise.Icon Name="Blazorise.Icons.FontAwesome.FontAwesomeIcons.Search" />
+                                Search
+                            </Blazorise.Button>
+                        </Blazorise.Column>
+                    </Blazorise.Row>
+                </Blazorise.Container>
+            </Blazorise.CardBody>
+        </Blazorise.Card>
+    </Blazorise.Column>
+
+</Row>
 <h1>Hello, world!</h1>
 
 Welcome to your new app.
 
 <SurveyPrompt Title="How is Blazor working for you?" />
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+@code{
+    // reference to the modal component
+    private Modal modalRef;
+
+    private void ShowModal()
+    {
+        modalRef.Show();
+    }
+
+    private void HideModal()
+    {
+        modalRef.Hide();
+    }
+}
